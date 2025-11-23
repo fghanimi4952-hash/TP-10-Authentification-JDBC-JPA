@@ -1,18 +1,8 @@
 #  Spring Security JPA — Authentication avec Base de Données
 
-##  Introduction
-Dans les TP précédents, l’authentification se faisait en mémoire via `InMemoryUserDetailsManager`.  
-Cette méthode est utile pour les tests, mais **les données disparaissent à chaque redémarrage**.
-
-Dans ce projet, nous mettons en place **une authentification réelle et persistante**, basée sur :
-- une base de données MySQL,
-- JPA pour gérer les entités (User, Role),
-- Spring Security pour protéger les pages,
-- un service personnalisé `UserDetailsService` pour charger les utilisateurs.
-
-L’objectif est de comprendre comment Spring Security fonctionne avec une base de données relationnelle.
-
----
+Ce TP met en place un système de login avec Spring Security et MySQL.
+Les utilisateurs et leurs rôles sont stockés en base.
+Spring vérifie le mot de passe, redirige après connexion et bloque l'accès aux pages selon le rôle (ADMIN/USER).
 
 ##  Objectifs du projet
 - Mettre en place un système d’authentification sécurisé.
@@ -38,7 +28,7 @@ L’objectif est de comprendre comment Spring Security fonctionne avec une base 
 <img width="650" height="804" alt="image" src="https://github.com/user-attachments/assets/d402ea3b-0bb8-41cd-8708-43b1579ddfaa" />
 
 
-## 🔐Fonctionnement global de l’authentification
+## Fonctionnement global de l’authentification
 
 L’utilisateur accède à /login.
 
